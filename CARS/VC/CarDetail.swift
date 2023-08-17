@@ -11,7 +11,8 @@ struct CarDetail: View {
     @ObservedObject var objCar: APIManager
     @Binding var selectedData: Result
     @Binding var fetchData: Bool
-    var newValue: Result = Result(country: "", createdOn: "", dateAvailableToPublic: "", id: 0, name: "", updatedOn: "", vehicleType: "", wmi: "")
+    @Binding var presentView: Bool
+    
     var body: some View {
         VStack {
             List {
@@ -24,8 +25,10 @@ struct CarDetail: View {
                             .font(.footnote)
                     }
                     Text(selectedData.country ?? "Country")
-                    TextField(selectedData.country ?? "N/A", value: $selectedData.country, formatter: NumberFormatter())
-                        .textFieldStyle(.roundedBorder)
+//                    TextField(selectedData.country ?? "N/A", value: $selectedData.country, formatter: NumberFormatter())
+//                        .textFieldStyle(.roundedBorder)
+                    
+                    TextEditor(text: $selectedData.country.toUnwrapped(defaultValue: ""))
                     Spacer()
                     VStack(alignment: .leading) {
                         Text("Name: \(String(describing: selectedData.dateAvailableToPublic ?? ""))")
@@ -36,6 +39,8 @@ struct CarDetail: View {
                         print(selectedData.country ?? "")
                         objCar.updateRecentData(updated: selectedData)
                         fetchData = false
+                        presentView = false
+                        
                     }.foregroundColor(.white)
                         .buttonStyle(.borderedProminent)
                 }
@@ -49,6 +54,6 @@ struct CarDetail: View {
 
 struct CarDetail_Previews: PreviewProvider {
     static var previews: some View {
-        CarDetail(objCar: APIManager(), selectedData: .constant(Result(country: "", createdOn: "", dateAvailableToPublic: "", id: 0, name: "", updatedOn: "", vehicleType: "", wmi: "")), fetchData: .constant(true))
+        CarDetail(objCar: APIManager(), selectedData: .constant(Result(country: "", createdOn: "", dateAvailableToPublic: "", id: 0, name: "", updatedOn: "", vehicleType: "", wmi: "")), fetchData: .constant(true), presentView: .constant(false))
     }
 }

@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(objAllTasks.result?.results ?? [], id: \.wmi) { dataResult in
+                ForEach(objAllTasks.all, id: \.wmi) { dataResult in
                     ZStack(alignment: .leading) {
                         Button(action: {
                             selectedCell = dataResult
@@ -24,13 +24,15 @@ struct ContentView: View {
                         }) {
                             CarView(carData: dataResult)
                         }
-                        //.background(link(selectedCellData: $selectedCell))
+//                        .background(link(selectedCellData: $selectedCell))
                     }
                 }
             }
             .listStyle(.plain)
             .padding()
             .task {
+                print(selectedCell)
+                print(selectedCell.country ?? "")
                 if FetchDataAgain{
                     await objAllTasks.getData()
                 }
@@ -38,15 +40,17 @@ struct ContentView: View {
             .navigationTitle("All Vehicles")
         }
         .sheet(isPresented: $presentView) {
-            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain)
+            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView)
 
         }
     }
     func link(selectedCellData: Binding<Result>) -> some View {
         NavigationLink {
-            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain)
+            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView)
+            
         } label: {
         }
+        
     }
     
 }
