@@ -12,22 +12,30 @@ struct ContentView: View {
     @State private var selectedCell: Result = Result(country: "", createdOn: "", dateAvailableToPublic: "", id: 0, name: "", updatedOn: "", vehicleType: "", wmi: "")
     @State var FetchDataAgain: Bool = true
     @State var presentView: Bool = false
-
+    @State var reloadList: Bool = false
+    
     var body: some View {
         NavigationView{
             List{
-                ForEach(objAllTasks.all, id: \.wmi) { dataResult in
+                ForEach(objAllTasks.result?.results ?? [], id: \.wmi) { dataResult in
                     ZStack(alignment: .leading) {
+                        CarView(carData: dataResult)
                         Button(action: {
                             selectedCell = dataResult
                             presentView = true
                         }) {
-                            CarView(carData: dataResult)
                         }
-//                        .background(link(selectedCellData: $selectedCell))
+//                        NavigationLink(destination: {
+//                            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, reloadList: .constant(false))
+//
+//                        }, label: {
+//
+//                        })
+//                        .background(link(selectedCellData: $selectedCell, data: dataResult))
                     }
                 }
             }
+            .id(reloadList)
             .listStyle(.plain)
             .padding()
             .task {
@@ -37,20 +45,23 @@ struct ContentView: View {
                     await objAllTasks.getData()
                 }
             }
+            .onChange(of: reloadList, perform: { newValue in
+                reloadList = false
+            })
+            
             .navigationTitle("All Vehicles")
         }
+        .navigationViewStyle(.stack)
         .sheet(isPresented: $presentView) {
-            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView)
-
+            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView, reloadList: $reloadList)
         }
     }
-    func link(selectedCellData: Binding<Result>) -> some View {
+    
+    func link(selectedCellData: Binding<Result>, data: Result) -> some View {
         NavigationLink {
-            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView)
-            
+            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView, reloadList: $reloadList)
         } label: {
         }
-        
     }
     
 }

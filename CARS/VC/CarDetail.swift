@@ -12,7 +12,9 @@ struct CarDetail: View {
     @Binding var selectedData: Result
     @Binding var fetchData: Bool
     @Binding var presentView: Bool
-    
+    @Binding var reloadList: Bool
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         VStack {
             List {
@@ -25,9 +27,6 @@ struct CarDetail: View {
                             .font(.footnote)
                     }
                     Text(selectedData.country ?? "Country")
-//                    TextField(selectedData.country ?? "N/A", value: $selectedData.country, formatter: NumberFormatter())
-//                        .textFieldStyle(.roundedBorder)
-                    
                     TextEditor(text: $selectedData.country.toUnwrapped(defaultValue: ""))
                     Spacer()
                     VStack(alignment: .leading) {
@@ -37,23 +36,26 @@ struct CarDetail: View {
                     }
                     Button("Update") {
                         print(selectedData.country ?? "")
-                        objCar.updateRecentData(updated: selectedData)
-                        fetchData = false
-                        presentView = false
-                        
+                        if objCar.updateRecentData(updated: selectedData) {
+                            reloadList = true
+                            fetchData = false
+//                            presentView = false
+                            dismiss()
+
+                        }
                     }.foregroundColor(.white)
                         .buttonStyle(.borderedProminent)
                 }
             }
             .listStyle(.sidebar)
         }
-            .navigationTitle("Details")
+        .navigationTitle("Details")
     }
-    }
+}
 
 
 struct CarDetail_Previews: PreviewProvider {
     static var previews: some View {
-        CarDetail(objCar: APIManager(), selectedData: .constant(Result(country: "", createdOn: "", dateAvailableToPublic: "", id: 0, name: "", updatedOn: "", vehicleType: "", wmi: "")), fetchData: .constant(true), presentView: .constant(false))
+        CarDetail(objCar: APIManager(), selectedData: .constant(Result(country: "", createdOn: "", dateAvailableToPublic: "", id: 0, name: "", updatedOn: "", vehicleType: "", wmi: "")), fetchData: .constant(true), presentView: .constant(false), reloadList: .constant(false))
     }
 }

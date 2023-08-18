@@ -7,40 +7,56 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B95C5C57-ED4E-4E0F-99CD-897620AA4E28"
-            shouldBeEnabled = "Yes"
+            uuid = "6589EF09-709A-41F1-B6D6-AF72736174D1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CARS/VC/CarDetail.swift"
+            filePath = "CARS/VC/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "6589EF09-709A-41F1-B6D6-AF72736174D1 - c6b2223fafd399e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;CARS.Result&gt;, Swift.Optional&lt;Swift.String&gt;, SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in CARS.ContentView.body.getter : some"
+                  moduleName = "CARS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yogesh/Desktop/CARS/CARS/VC/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "151">
+               </Location>
+               <Location
+                  uuid = "6589EF09-709A-41F1-B6D6-AF72736174D1 - e6d29a01c01531c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (CARS.Result) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;CARS.Result&gt;, Swift.Optional&lt;Swift.String&gt;, SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in CARS.ContentView.body.getter : some"
+                  moduleName = "CARS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yogesh/Desktop/CARS/CARS/VC/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "538">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0A1F4B9-69AA-4210-91C0-4A039FA29C8A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CARS/APIModel/CarsAPI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "updateRecentData(updated:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C0DFF42F-0EC5-4A8C-AED4-C62038B96E20"
-            shouldBeEnabled = "Yes"
+            uuid = "4295C638-CA39-4D96-B544-32EEC7484796"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CARS/VC/ContentView.swift"
@@ -52,11 +68,11 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "C0DFF42F-0EC5-4A8C-AED4-C62038B96E20 - f74e8c758e92099f"
+                  uuid = "4295C638-CA39-4D96-B544-32EEC7484796 - e6d29a01c01531c6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.Button&lt;CARS.CarView&gt; in closure #1 (CARS.Result) -&gt; SwiftUI.ZStack&lt;SwiftUI.Button&lt;CARS.CarView&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;CARS.Result&gt;, Swift.Optional&lt;Swift.String&gt;, SwiftUI.ZStack&lt;SwiftUI.Button&lt;CARS.CarView&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in CARS.ContentView.body.getter : some"
+                  symbolName = "closure #1 (CARS.Result) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;CARS.Result&gt;, Swift.Optional&lt;Swift.String&gt;, SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in CARS.ContentView.body.getter : some"
                   moduleName = "CARS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yogesh/Desktop/CARS/CARS/VC/ContentView.swift"
@@ -64,14 +80,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "167">
+                  offsetFromSymbolStart = "538">
                </Location>
                <Location
-                  uuid = "C0DFF42F-0EC5-4A8C-AED4-C62038B96E20 - 7ff9baf96f05efc"
+                  uuid = "4295C638-CA39-4D96-B544-32EEC7484796 - 75c20b8850ebdd6b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.Button&lt;CARS.CarView&gt; in closure #1 (CARS.Result) -&gt; SwiftUI.ZStack&lt;SwiftUI.Button&lt;CARS.CarView&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;CARS.Result&gt;, Swift.Optional&lt;Swift.String&gt;, SwiftUI.ZStack&lt;SwiftUI.Button&lt;CARS.CarView&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in CARS.ContentView.body.getter : some"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt; in closure #1 (CARS.Result) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;CARS.Result&gt;, Swift.Optional&lt;Swift.String&gt;, SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(CARS.CarView, SwiftUI.Button&lt;SwiftUI.EmptyView&gt;)&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in CARS.ContentView.body.getter : some"
                   moduleName = "CARS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yogesh/Desktop/CARS/CARS/VC/ContentView.swift"
@@ -79,71 +95,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "49">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "47FE5300-38B0-435E-9183-1DFC30938E00"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CARS/VC/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3381AF00-C2C2-4F50-AE05-E5D8935B85F4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CARS/CustomCell/CarView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "3381AF00-C2C2-4F50-AE05-E5D8935B85F4 - 38f49fef73fd1a75"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CARS.CarView.body.getter : some"
-                  moduleName = "CARS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yogesh/Desktop/CARS/CARS/CustomCell/CarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "266">
-               </Location>
-               <Location
-                  uuid = "3381AF00-C2C2-4F50-AE05-E5D8935B85F4 - 7a8f61f1afcdf4e9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.Text, SwiftUI.Text, SwiftUI.Text, SwiftUI.Text, SwiftUI.Text)&gt; in CARS.CarView.body.getter : some"
-                  moduleName = "CARS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yogesh/Desktop/CARS/CARS/CustomCell/CarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "209">
+                  offsetFromSymbolStart = "215">
                </Location>
             </Locations>
          </BreakpointContent>

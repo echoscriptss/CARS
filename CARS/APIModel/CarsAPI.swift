@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftUI
-
+@MainActor
 class APIManager: ObservableObject {
     @Published var result: Car?
+
+//    @Published var result: Car = Car(count: nil, message: nil, searchCriteria: nil, results: [])
     @Published var all: [Result] = []
     func getCarsList() async throws {
         if let url = URL(string: "https://vpic.nhtsa.dot.gov/api/vehicles/GetWMIsForManufacturer/987?format=json") {
@@ -21,8 +23,8 @@ class APIManager: ObservableObject {
                 let jsonDecoder = JSONDecoder()
                 let cars = try jsonDecoder.decode(Car.self, from: data)
                  DispatchQueue.main.async { [weak self] in
-//                    self?.result = cars
-                     self?.all = cars.results
+                    self?.result = cars
+//                     self?.all = cars.results
                 }
             }
             catch {
@@ -38,12 +40,14 @@ class APIManager: ObservableObject {
         }
     }
     
-    func updateRecentData(updated: Result) {
+    func updateRecentData(updated: Result)->Bool {
         print(updated.wmi ?? "")
         print(updated.country ?? "")
-        if let index = all.firstIndex(where: {$0.wmi == updated.wmi}){
-            all[index].country = updated.country
+        if let index = result?.results.firstIndex(where: {$0.wmi == updated.wmi}) {
+            result?.results[index].country = updated.country
+            return true
         }
+        return false
     }
 }
 extension Binding {
