@@ -25,17 +25,13 @@ struct ContentView: View {
                             presentView = true
                         }) {
                         }
-//                        NavigationLink(destination: {
-//                            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, reloadList: .constant(false))
-//
-//                        }, label: {
-//
-//                        })
-//                        .background(link(selectedCellData: $selectedCell, data: dataResult))
+                        NavigationLink {
+                            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView, reloadList: $reloadList)
+                        } label: {
+                        }
                     }
                 }
             }
-            .id(reloadList)
             .listStyle(.plain)
             .padding()
             .task {
@@ -45,16 +41,9 @@ struct ContentView: View {
                     await objAllTasks.getData()
                 }
             }
-            .onChange(of: reloadList, perform: { newValue in
-                reloadList = false
-            })
-            
             .navigationTitle("All Vehicles")
         }
         .navigationViewStyle(.stack)
-        .sheet(isPresented: $presentView) {
-            CarDetail(objCar: objAllTasks, selectedData: $selectedCell, fetchData: $FetchDataAgain, presentView: $presentView, reloadList: $reloadList)
-        }
     }
     
     func link(selectedCellData: Binding<Result>, data: Result) -> some View {

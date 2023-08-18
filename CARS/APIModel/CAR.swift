@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - Car
-class Car: Codable {
+struct Car: Codable {
     var count: Int?
     var message, searchCriteria: String?
     var results: [Result]
@@ -27,7 +27,7 @@ class Car: Codable {
 }
 
 // MARK: - Result
-class Result: Codable {
+struct Result: Codable {
     var country: String? = nil
     var createdOn: String? = nil, dateAvailableToPublic: String? = nil
     var id: Int? = nil
